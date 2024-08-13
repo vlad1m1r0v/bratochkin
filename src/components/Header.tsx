@@ -1,19 +1,54 @@
 import { useState } from "react";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import logo from "@/assets/logo.svg";
 
+interface Section {
+  name: string;
+  href: string;
+}
+
+const sections: Section[] = [
+  { name: "Hero", href: "#hero" },
+  { name: "About us", href: "#about-us" },
+  { name: "Services", href: "#services" },
+  { name: "Clients", href: "#clients" },
+  { name: "Contacts", href: "#contacts" },
+];
+
 export const Header = () => {
+  const [isHidden, setHidden] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious();
+
+    if (latest > previous! && latest > 64) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <header>
+    <motion.header
+      variants={{
+        visible: { y: 0 },
+        hidden: { y: "-100%" },
+      }}
+      initial="hidden"
+      animate={isHidden && !isMenuOpen ? "hidden" : "visible"}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+      className="border-b sticky top-0 bg-gray-50 z-20"
+    >
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="md:flex md:items-center md:gap-12">
-            <a className="block" href="#">
+            <a className="block" href="/">
               <span className="sr-only">Home</span>
               <img src={logo} className="h-8" alt="Home" />
             </a>
@@ -22,54 +57,16 @@ export const Header = () => {
           <div className="hidden md:block">
             <nav aria-label="Global">
               <ul className="flex items-center gap-6 text-sm">
-                <li>
-                  <a
-                    className="text-gray-900 transition hover:text-red-500"
-                    href="#"
-                  >
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="text-gray-900 transition hover:text-red-500"
-                    href="#"
-                  >
-                    Careers
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="text-gray-900 transition hover:text-red-500"
-                    href="#"
-                  >
-                    History
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="text-gray-900 transition hover:text-red-500"
-                    href="#"
-                  >
-                    Services
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="text-gray-900 transition hover:text-red-500"
-                    href="#"
-                  >
-                    Projects
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="text-gray-900 transition hover:text-red-500"
-                    href="#"
-                  >
-                    Blog
-                  </a>
-                </li>
+                {sections.map((section, index) => (
+                  <li key={index}>
+                    <a
+                      className="text-gray-900 transition hover:text-red-500"
+                      href={section.href}
+                    >
+                      {section.name}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </nav>
           </div>
@@ -105,58 +102,20 @@ export const Header = () => {
         >
           <nav>
             <ul className="flex flex-col items-center gap-6 text-sm py-4">
-              <li>
-                <a
-                  className="text-gray-900 transition hover:text-red-500"
-                  href="#"
-                >
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-gray-900 transition hover:text-red-500"
-                  href="#"
-                >
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-gray-900 transition hover:text-red-500"
-                  href="#"
-                >
-                  History
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-gray-900 transition hover:text-red-500"
-                  href="#"
-                >
-                  Services
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-gray-900 transition hover:text-red-500"
-                  href="#"
-                >
-                  Projects
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-gray-900 transition hover:text-red-500"
-                  href="#"
-                >
-                  Blog
-                </a>
-              </li>
+              {sections.map((section, index) => (
+                <li key={index}>
+                  <a
+                    className="text-gray-900 transition hover:text-red-500"
+                    href={section.href}
+                  >
+                    {section.name}
+                  </a>
+                </li>
+              ))}
             </ul>
           </nav>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 };
