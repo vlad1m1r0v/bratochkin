@@ -11,7 +11,7 @@ const sections: Section[] = [
   { name: "Hero", href: "#hero" },
   { name: "About us", href: "#about-us" },
   { name: "Services", href: "#services" },
-  { name: "Clients", href: "#clients" },
+  { name: "Partners and clients", href: "#partners-and-clients" },
   { name: "Contacts", href: "#contacts" },
 ];
 
@@ -56,7 +56,7 @@ export const Header = () => {
 
           <div className="hidden md:block">
             <nav aria-label="Global">
-              <ul className="flex items-center gap-6 text-sm">
+              <ul className="flex items-center gap-6">
                 {sections.map((section, index) => (
                   <li key={index}>
                     <a
@@ -101,7 +101,7 @@ export const Header = () => {
           } overflow-hidden transition-[max-height] duration-300`}
         >
           <nav>
-            <ul className="flex flex-col items-center gap-6 text-sm py-4">
+            <ul className="flex flex-col items-center gap-6 py-4">
               {sections.map((section, index) => (
                 <li key={index}>
                   <a
