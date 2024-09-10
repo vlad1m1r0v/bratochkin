@@ -3,6 +3,7 @@ import IGaming from "@/assets/services/IGaming.png";
 import KOLRound from "@/assets/services/KOLRound.png";
 import Web3Dev from "@/assets/services/Web3Dev.png";
 import clsx from "clsx";
+import { motion } from "framer-motion";
 
 interface ServiceProp {
   title: string;
@@ -54,6 +55,22 @@ const services: ServiceProp[] = [
   },
 ];
 
+const animation = {
+  hidden: {
+    opacity: 0,
+    scale: 0.0,
+  },
+  show: (index: number) => ({
+    opacity: 1,
+    scale: 1,
+    transition: {
+      type: "spring",
+      duration: 1,
+      delay: 0.1 * index,
+    },
+  }),
+};
+
 const Service: React.FC<ServiceProp & { index: number }> = ({
   title,
   text,
@@ -87,18 +104,27 @@ const Service: React.FC<ServiceProp & { index: number }> = ({
 
 export const Services = () => (
   <>
-    <section>
+    <section className="overflow-x-hidden">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 pb-8">
-        <div className="my-8 grid grid-cols-1 gap-8">
+        <motion.div whileInView="show" className="my-8 grid grid-cols-1 gap-8">
           {services.map((service, index) => (
-            <Service
-              title={service.title}
-              text={service.text}
-              image={service.image}
-              index={index}
-            />
+            <motion.div
+              key={index}
+              variants={animation}
+              initial="hidden"
+              whileInView="show"
+              custom={index}
+              style={{ originX: index % 2 == 0 ? 0 : 1 }}
+            >
+              <Service
+                title={service.title}
+                text={service.text}
+                image={service.image}
+                index={index}
+              />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   </>
