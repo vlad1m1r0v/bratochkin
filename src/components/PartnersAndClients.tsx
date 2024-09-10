@@ -15,6 +15,7 @@ import Walbi from "@/assets/partners/Walbi.svg";
 import ChoiceAI from "@/assets/partners/ChoiceAI.svg";
 import Pete from "@/assets/partners/Pete.png";
 import YNation from "@/assets/partners/YNation.png";
+import { motion } from "framer-motion";
 
 interface PartnerOrClient {
   name: string;
@@ -113,6 +114,30 @@ const clients: PartnerOrClient[] = [
   },
 ];
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: -10, x: -10, scale: 0.5 },
+  show: {
+    opacity: 1,
+    y: 0,
+    x: 0,
+    scale: 1,
+    transition: {
+      type: "ease-in-out",
+      duration: 0.15,
+    },
+  },
+};
+
 const Card: React.FC<PartnerOrClient> = ({ name, href, logo }) => {
   return (
     <a
@@ -134,11 +159,22 @@ export const Partners = () => {
   return (
     <section>
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 pb-8">
-        <div className="my-8 grid grid-cols-1 gap-8 lg:grid-cols-5">
-          {partners.map((partner) => (
-            <Card name={partner.name} logo={partner.logo} href={partner.href} />
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          className="my-8 grid grid-cols-1 gap-8 lg:grid-cols-5"
+        >
+          {partners.map((partner, index) => (
+            <motion.div key={index} variants={item}>
+              <Card
+                name={partner.name}
+                logo={partner.logo}
+                href={partner.href}
+              />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -148,11 +184,18 @@ export const Clients = () => {
   return (
     <section>
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 pb-8">
-        <div className="my-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {clients.map((client) => (
-            <Card name={client.name} logo={client.logo} href={client.href} />
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          className="my-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4"
+        >
+          {clients.map((client, index) => (
+            <motion.div key={index} variants={item}>
+              <Card name={client.name} logo={client.logo} href={client.href} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
