@@ -9,13 +9,19 @@ const App = () => {
     <>
       <div className="bg-gray-50 selection:text-gray-50 selection:bg-red-500">
         <Header />
-        <Hero />
-        <Divider>Partners</Divider>
-        <Partners />
-        <Divider>Clients</Divider>
-        <Clients />
-        <Divider>Services</Divider>
-        <Services />
+        <div id="hero">
+          <Hero />
+        </div>
+        <div id="partners-and-clients">
+          <Divider>Partners</Divider>
+          <Partners />
+          <Divider>Clients</Divider>
+          <Clients />
+        </div>
+        <div id="services">
+          <Divider>Services</Divider>
+          <Services />
+        </div>
       </div>
     </>
   );

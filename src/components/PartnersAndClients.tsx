@@ -132,7 +132,7 @@ const item = {
     x: 0,
     scale: 1,
     transition: {
-      type: "ease-in-out",
+      type: "spring",
       duration: 0.15,
     },
   },

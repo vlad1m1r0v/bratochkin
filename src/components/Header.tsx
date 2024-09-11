@@ -9,9 +9,8 @@ interface Section {
 
 const sections: Section[] = [
   { name: "Hero", href: "#hero" },
-  { name: "About us", href: "#about-us" },
-  { name: "Services", href: "#services" },
   { name: "Partners and clients", href: "#partners-and-clients" },
+  { name: "Services", href: "#services" },
   { name: "Contacts", href: "#contacts" },
 ];
 
@@ -41,7 +40,7 @@ export const Header = () => {
         hidden: { y: "-100%" },
       }}
       initial="hidden"
-      animate={isHidden && !isMenuOpen ? "hidden" : "visible"}
+      animate={isHidden ? "hidden" : "visible"}
       transition={{ duration: 0.3, ease: "easeInOut" }}
       className="border-b sticky top-0 bg-gray-50 z-20"
     >
