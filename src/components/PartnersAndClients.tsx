@@ -1,20 +1,20 @@
-import Uptrend from "@/assets/partners/Uptrend.svg";
-import BDCConsulting from "@/assets/partners/BDCConsulting.svg";
-import Solus from "@/assets/partners/Solus.svg";
-import InputPR from "@/assets/partners/InputPR.svg";
-import BestionLimited from "@/assets/partners/Bestion.png";
-import BrightyApp from "@/assets/partners/Brighty.png";
-import CryptoBattle from "@/assets/partners/CryptoBattle.avif";
-import BetFury from "@/assets/partners/BetFury.webp";
-import EvoSim from "@/assets/partners/EvoSim.svg";
-import Rubic from "@/assets/partners/Rubic.png";
-import Bingx from "@/assets/partners/Bingx.svg";
-import BTCAlpha from "@/assets/partners/BTCAlpha.svg";
-import Jade98 from "@/assets/partners/Jade98.svg";
-import Walbi from "@/assets/partners/Walbi.svg";
-import ChoiceAI from "@/assets/partners/ChoiceAI.svg";
-import Pete from "@/assets/partners/Pete.png";
-import YNation from "@/assets/partners/YNation.png";
+import Uptrend from "/partners/Uptrend.svg";
+import BDCConsulting from "/partners/BDCConsulting.svg";
+import Solus from "/partners/Solus.svg";
+import InputPR from "/partners/InputPR.svg";
+import BestionLimited from "/partners/Bestion.png";
+import BrightyApp from "/partners/Brighty.png";
+import CryptoBattle from "/partners/CryptoBattle.avif";
+import BetFury from "/partners/BetFury.webp";
+import EvoSim from "/partners/EvoSim.svg";
+import Rubic from "/partners/Rubic.png";
+import Bingx from "/partners/Bingx.svg";
+import BTCAlpha from "/partners/BTCAlpha.svg";
+import Jade98 from "/partners/Jade98.svg";
+import Walbi from "/partners/Walbi.svg";
+import ChoiceAI from "/partners/ChoiceAI.svg";
+import Pete from "/partners/Pete.png";
+import YNation from "/partners/YNation.png";
 import { motion } from "framer-motion";
 
 interface PartnerOrClient {

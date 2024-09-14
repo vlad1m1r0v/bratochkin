@@ -52,9 +52,9 @@ export const Hero = () => {
         <div className="mx-auto max-w-3xl">
           <h1 className="text-4xl font-extrabold sm:text-7xl">
             Marketing in Crypto & Web 3.0
-            <strong className="font-extrabold sm:block">
-              Boost your metrics
-            </strong>
+          </h1>
+          <h1 className="text-4xl font-extrabold sm:text-7xl">
+            Boost your metrics
           </h1>
         </div>
       </motion.div>

@@ -1,7 +1,7 @@
-import InfluencerMarketingWeb3 from "@/assets/services/InfluencerMarketingWeb3.png";
-import IGaming from "@/assets/services/IGaming.png";
-import KOLRound from "@/assets/services/KOLRound.png";
-import Web3Dev from "@/assets/services/Web3Dev.png";
+import InfluencerMarketingWeb3 from "/services/InfluencerMarketingWeb3.png";
+import IGaming from "/services/IGaming.png";
+import KOLRound from "/services/KOLRound.png";
+import Web3Dev from "/services/Web3Dev.png";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 

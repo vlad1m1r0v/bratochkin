@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import logo from "@/assets/logo.svg";
+import logo from "/logo.svg";
 
 interface Section {
   name: string;

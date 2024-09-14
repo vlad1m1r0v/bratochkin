@@ -1,6 +1,6 @@
-import Instagram from "@/assets/socials/instagram.svg";
-import Telegram from "@/assets/socials/telegram.svg";
-import LinkedIn from "@/assets/socials/linkedin.svg";
+import Instagram from "/socials/instagram.svg";
+import Telegram from "/socials/telegram.svg";
+import LinkedIn from "/socials/linkedin.svg";
 
 interface Social {
   logo: string;
