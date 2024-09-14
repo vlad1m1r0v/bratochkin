@@ -97,7 +97,7 @@ const Service: React.FC<ServiceProp & { index: number }> = ({
       <div className="bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent">
         <p className="text-4xl font-bold mb-4">{title}</p>
       </div>
-      <p className="text-2xl font-light">{text}</p>
+      <p className="text-xl font-light">{text}</p>
     </div>
   </div>
 );

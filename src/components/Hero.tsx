@@ -22,6 +22,7 @@ const titleAnimation = {
   },
   show: {
     y: 0,
+    // rotate: -6,
     opacity: 1,
     transition: {
       type: "spring",

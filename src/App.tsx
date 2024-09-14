@@ -2,6 +2,7 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Partners, Clients } from "@/components/PartnersAndClients";
 import { Services } from "@/components/Services";
+import { Contacts } from "@/components/Contacts";
 import { Divider } from "@/components/Divider";
 
 const App = () => {
@@ -21,6 +22,10 @@ const App = () => {
         <div id="services">
           <Divider>Services</Divider>
           <Services />
+        </div>
+        <div id="contacts">
+          <Divider>Contacts</Divider>
+          <Contacts />
         </div>
       </div>
     </>
