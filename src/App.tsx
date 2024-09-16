@@ -4,6 +4,7 @@ import { Partners, Clients } from "@/components/PartnersAndClients";
 import { Services } from "@/components/Services";
 import { Contacts } from "@/components/Contacts";
 import { Divider } from "@/components/Divider";
+import { Footer } from "@/components/Footer";
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
           <Divider>Contacts</Divider>
           <Contacts />
         </div>
+        <Footer />
       </div>
     </>
   );

@@ -1,6 +1,7 @@
 import Instagram from "/socials/instagram.svg";
 import Telegram from "/socials/telegram.svg";
 import LinkedIn from "/socials/linkedin.svg";
+import { motion } from "framer-motion";
 
 interface Social {
   logo: string;
@@ -42,27 +43,57 @@ const locations: Location[] = [
   },
 ];
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, scale: 0.0 },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      type: "spring",
+      duration: 0.25,
+    },
+  },
+};
+
 export const Contacts = () => {
   return (
     <section>
-      <div className="flex flex-col gap-y-6 mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 pb-8">
-        <div className="flex flex-col items-center gap-y-6">
-          <div className="flex flex-row gap-x-6">
-            {socials.map((social) => (
-              <a href={social.href}>
-                <img className="w-12 rounded-md" src={social.logo} />
-              </a>
-            ))}
-          </div>
-        </div>
-        <div className="flex flex-col gap-3">
-          {locations.map((location) => (
-            <div>
+      <div className="mx-auto max-w-screen-xl grid grid-cols-1 md:grid-cols-2 px-4 pb-6 gap-3">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          className="flex flex-col gap-3"
+        >
+          {locations.map((location, index) => (
+            <motion.div key={index} variants={item}>
               <p className="text-2xl font-bold">{location.country}</p>
               <p className="text-xl font-light">{location.address}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          className="flex items-end justify-center flex-row md:flex-col gap-3"
+        >
+          {socials.map((social, index) => (
+            <motion.a key={index} variants={item} href={social.href}>
+              <img className="w-10 lg:w-12 rounded-md" src={social.logo} />
+            </motion.a>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
