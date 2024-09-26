@@ -2,7 +2,7 @@ import Uptrend from "/partners/Uptrend.svg";
 import BDCConsulting from "/partners/BDCConsulting.svg";
 import Solus from "/partners/Solus.svg";
 import InputPR from "/partners/InputPR.svg";
-import BestionLimited from "/partners/Bestion.png";
+import TulukoGroup from "/partners/TulukoGroup.svg";
 import BrightyApp from "/partners/Brighty.png";
 import CryptoBattle from "/partners/CryptoBattle.avif";
 import BetFury from "/partners/BetFury.webp";
@@ -45,9 +45,9 @@ const partners: PartnerOrClient[] = [
     logo: InputPR,
   },
   {
-    name: "Bestion Limited",
-    href: "https://www.bestion-limited.com/",
-    logo: BestionLimited,
+    name: "Tuluko Group",
+    href: "https://www.tuluko.eu/",
+    logo: TulukoGroup,
   },
 ];
 
