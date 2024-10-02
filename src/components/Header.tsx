@@ -42,7 +42,7 @@ export const Header = () => {
       initial="hidden"
       animate={isHidden ? "hidden" : "visible"}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      className="border-b sticky top-0 bg-gray-50 z-20"
+      className="sticky top-0 bg-red-600 z-20 shadow-lg"
     >
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
@@ -59,7 +59,7 @@ export const Header = () => {
                 {sections.map((section, index) => (
                   <li key={index}>
                     <a
-                      className="text-gray-900 transition hover:text-red-500"
+                      className="text-neutral-50 transition hover:text-red-100"
                       href={section.href}
                     >
                       {section.name}
@@ -73,7 +73,7 @@ export const Header = () => {
           <div className="flex items-center gap-4">
             <div className="block md:hidden">
               <button
-                className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-red-500"
+                className="rounded p-2 text-neutral-50 transition hover:text-red-100"
                 onClick={toggleMenu}
               >
                 <svg
@@ -104,7 +104,7 @@ export const Header = () => {
               {sections.map((section, index) => (
                 <li key={index}>
                   <a
-                    className="text-gray-900 transition hover:text-red-500"
+                    className="text-neutral-50 transition hover:text-red-100"
                     href={section.href}
                   >
                     {section.name}
