@@ -13,7 +13,7 @@ const App = () => {
       <div className="bg-gray-50 selection:text-gray-50 selection:bg-red-500">
         <Header />
         <Announcement />
-        <div id="hero">
+        <div id="about-us">
           <Hero />
         </div>
         <div id="clients">
