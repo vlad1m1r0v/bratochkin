@@ -159,7 +159,7 @@ const Card: React.FC<PartnerOrClient> = ({ name, href, logo }) => {
 export const Partners = () => {
   return (
     <section>
-      <div className="mx-auto max-w-screen-xl px-4">
+      <div className="mx-auto max-w-screen-xl px-4 mask-gradient bg-gray-50">
         <Ticker duration={15}>
           {partners.map((partner, index) => (
             <div className="m-4 w-[250px]">
