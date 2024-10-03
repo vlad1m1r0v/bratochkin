@@ -15,7 +15,7 @@ import Walbi from "/partners/Walbi.svg";
 import ChoiceAI from "/partners/ChoiceAI.svg";
 import Pete from "/partners/Pete.png";
 import YNation from "/partners/YNation.png";
-import { motion, px } from "framer-motion";
+import { motion } from "framer-motion";
 import Ticker from "framer-motion-ticker";
 
 interface PartnerOrClient {
