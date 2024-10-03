@@ -7,9 +7,12 @@ interface Section {
   href: string;
 }
 
+const HEADER_HEIGHT = 64;
+
 const sections: Section[] = [
-  { name: "Hero", href: "#hero" },
-  { name: "Partners and clients", href: "#partners-and-clients" },
+  { name: "About Us", href: "#about-us" },
+  { name: "Clients", href: "#clients" },
+  { name: "Partners", href: "#partners" },
   { name: "Services", href: "#services" },
   { name: "Contacts", href: "#contacts" },
 ];
@@ -22,7 +25,7 @@ export const Header = () => {
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
 
-    if (latest > previous! && latest > 64) {
+    if (latest > previous! && latest > HEADER_HEIGHT) {
       setHidden(true);
     } else {
       setHidden(false);

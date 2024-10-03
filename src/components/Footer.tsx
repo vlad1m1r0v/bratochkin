@@ -1,9 +1,9 @@
 export const Footer = () => {
   return (
-    <div className="border">
-      <div className="mx-auto max-w-screen-xl py-4 text-center text-gray-800">
+    <div className="bg-red-600">
+      <div className="mx-auto max-w-screen-xl py-4 text-center text-neutral-50">
         <span>
-          © {new Date().getFullYear()}. Lucid Co. All rights reserved.
+          © {new Date().getFullYear()}. Lucid Media. All rights reserved.
         </span>
       </div>
     </div>
