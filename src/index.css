@@ -44,8 +44,8 @@
   font-style: normal;
 }
 
-/* @layer base {
+@layer base {
   html {
     font-family: "e-Ukraine", system-ui, sans-serif;
   }
-} */
+}

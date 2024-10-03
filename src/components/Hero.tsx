@@ -49,12 +49,10 @@ export const Hero = () => {
         className="relative z-10 mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-full lg:items-center text-center bg-gradient-to-r from-pink-300 to-yellow-400 bg-clip-text text-transparent"
       >
         <div className="mx-auto max-w-3xl">
-          <h1 className="text-4xl font-extrabold sm:text-7xl">
+          <h1 className="text-4xl font-bold sm:text-7xl">
             Marketing in Crypto & Web 3.0
           </h1>
-          <h1 className="text-4xl font-extrabold sm:text-7xl">
-            Boost your metrics
-          </h1>
+          <h1 className="text-4xl font-bold sm:text-7xl">Boost your metrics</h1>
         </div>
       </motion.div>
     </section>

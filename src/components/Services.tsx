@@ -65,8 +65,8 @@ const animation = {
     scale: 1,
     transition: {
       type: "spring",
-      duration: 1,
-      delay: 0.1 * index,
+      duration: 0.75,
+      delay: 0.15 * index,
     },
   }),
 };
@@ -94,10 +94,10 @@ const Service: React.FC<ServiceProp & { index: number }> = ({
         "xl:pr-8": index % 2 != 0,
       })}
     >
-      <div className="bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent">
+      <div className="bg-gradient-to-r from-red-500 to-yellow-500 bg-clip-text text-transparent">
         <p className="text-4xl font-bold mb-4">{title}</p>
       </div>
-      <p className="text-xl font-light">{text}</p>
+      <p className="text-lg font-light">{text}</p>
     </div>
   </div>
 );

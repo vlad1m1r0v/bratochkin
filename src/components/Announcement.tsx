@@ -11,12 +11,12 @@ export const Announcement = () => {
   return (
     <div
       className={clsx({
-        "flex items-center justify-between gap-4 bg-gray-900 px-4 py-3 text-white":
+        "flex items-center justify-between gap-4 bg-gray-900 px-4 py-2 text-neutral-50":
           true,
         hidden: !open,
       })}
     >
-      <p className="font-medium">🚧 Repair works are underway 🚧</p>
+      <p className="text-sm font-normal">🚧 Repair works are underway 🚧</p>
       <button
         aria-label="Dismiss"
         className="shrink-0 rounded-lg bg-black/10 p-1 transition hover:bg-black/20"

@@ -30,16 +30,16 @@ interface Location {
 
 const locations: Location[] = [
   {
+    country: "🇺🇦 Ukraine",
+    address: "Dilova Street, 1/2, Kyiv, 03150",
+  },
+  {
     country: "🇵🇱 Poland",
     address: "Warsaw, Grzybowska St. 73/8a",
   },
   {
     country: "🇪🇪 Estonia",
     address: "Tallinn, Kesklinna linnaosa, Vesivärava tn 50-201",
-  },
-  {
-    country: "🇺🇸 United States",
-    address: "30 N Gould St Ste R, Sheridan, WY 82801",
   },
 ];
 
@@ -77,8 +77,8 @@ export const Contacts = () => {
         >
           {locations.map((location, index) => (
             <motion.div key={index} variants={item}>
-              <p className="text-2xl font-bold">{location.country}</p>
-              <p className="text-xl font-light">{location.address}</p>
+              <p className="text-xl font-bold">{location.country}</p>
+              <p className="text-lg font-light">{location.address}</p>
             </motion.div>
           ))}
         </motion.div>
