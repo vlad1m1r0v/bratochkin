@@ -105,7 +105,7 @@ const Service: React.FC<ServiceProp & { index: number }> = ({
 export const Services = () => (
   <>
     <section className="overflow-x-hidden">
-      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 pb-8">
+      <div className="mx-auto max-w-screen-xl px-4">
         <motion.div whileInView="show" className="my-8 grid grid-cols-1 gap-8">
           {services.map((service, index) => (
             <motion.div

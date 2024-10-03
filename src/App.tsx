@@ -1,9 +1,12 @@
 import { Header } from "@/components/Header";
 import { Announcement } from "@/components/Announcement";
-import { Hero } from "@/components/Hero";
-import { Partners, Clients } from "@/components/PartnersAndClients";
-import { Services } from "@/components/Services";
-import { Contacts } from "@/components/Contacts";
+import {
+  Hero,
+  Clients,
+  Partners,
+  Services,
+  Contacts,
+} from "@/components/sections";
 import { Divider } from "@/components/Divider";
 import { Footer } from "@/components/Footer";
 

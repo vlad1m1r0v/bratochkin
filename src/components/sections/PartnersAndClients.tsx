@@ -15,7 +15,8 @@ import Walbi from "/partners/Walbi.svg";
 import ChoiceAI from "/partners/ChoiceAI.svg";
 import Pete from "/partners/Pete.png";
 import YNation from "/partners/YNation.png";
-import { motion } from "framer-motion";
+import { motion, px } from "framer-motion";
+import Ticker from "framer-motion-ticker";
 
 interface PartnerOrClient {
   name: string;
@@ -144,7 +145,7 @@ const Card: React.FC<PartnerOrClient> = ({ name, href, logo }) => {
       className="block rounded-3xl border border-gray-300 p-6 shadow-md transition hover:border-red-500 hover:shadow-red-500 h-32"
       href={href}
     >
-      <div className="w-full h-full flex items-center justify-center overflow-hidden">
+      <div className="h-full flex items-center justify-center overflow-hidden">
         <img
           src={logo}
           alt={name}
@@ -158,23 +159,19 @@ const Card: React.FC<PartnerOrClient> = ({ name, href, logo }) => {
 export const Partners = () => {
   return (
     <section>
-      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 pb-8">
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          className="my-8 grid grid-cols-1 gap-8 lg:grid-cols-5"
-        >
+      <div className="mx-auto max-w-screen-xl px-4">
+        <Ticker duration={15}>
           {partners.map((partner, index) => (
-            <motion.div key={index} variants={item}>
+            <div className="m-4 w-[250px]">
               <Card
+                key={index}
                 name={partner.name}
                 logo={partner.logo}
                 href={partner.href}
               />
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </Ticker>
       </div>
     </section>
   );
@@ -183,7 +180,7 @@ export const Partners = () => {
 export const Clients = () => {
   return (
     <section>
-      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 pb-8">
+      <div className="mx-auto max-w-screen-xl px-4">
         <motion.div
           variants={container}
           initial="hidden"
