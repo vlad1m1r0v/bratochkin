@@ -29,7 +29,7 @@ export const Hero = () => {
       />
       <div className="relative z-10 mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-full lg:items-center text-center">
         <div className="mx-auto max-w-3xl">
-          <h1 className="text-4xl font-bold sm:text-7xl bg-red-600 text-neutral-50 p-2">
+          <h1 className="text-4xl font-bold sm:text-7xl bg-red-500 text-neutral-50 px-1 py-3">
             <AnimText delay={0.5} />
           </h1>
         </div>

@@ -8,9 +8,12 @@ export interface IRedoAnimTextProps {
 export default function RedoAnimText({ delay }: IRedoAnimTextProps) {
   const textIndex = useMotionValue(0);
   const texts: string[] = [
-    "Web 3 accelerator for your project",
-    "IDO investments",
-    "More than 5400 KOLS",
+    "Your lucid web3 accelerator",
+    "KOLs marketing",
+    "Сelebrities Ambassador programs",
+    "KOLs rounds Fundraising",
+    "Web3 applications development",
+    "Growth consulting",
   ];
 
   const baseText = useTransform(textIndex, (latest) => texts[latest] || "");
