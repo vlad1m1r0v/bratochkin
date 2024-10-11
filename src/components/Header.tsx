@@ -1,13 +1,10 @@
 import { useState } from "react";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import logo from "/logo.svg";
 
 interface Section {
   name: string;
   href: string;
 }
-
-const HEADER_HEIGHT = 64;
 
 const sections: Section[] = [
   { name: "About Us", href: "#about-us" },
@@ -18,35 +15,14 @@ const sections: Section[] = [
 ];
 
 export const Header = () => {
-  const [isHidden, setHidden] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { scrollY } = useScroll();
-
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious();
-
-    if (latest > previous! && latest > HEADER_HEIGHT) {
-      setHidden(true);
-    } else {
-      setHidden(false);
-    }
-  });
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <motion.header
-      variants={{
-        visible: { y: 0 },
-        hidden: { y: "-100%" },
-      }}
-      initial="hidden"
-      animate={isHidden ? "hidden" : "visible"}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
-      className="sticky top-0 bg-red-600 z-20 shadow-lg"
-    >
+    <header className="sticky top-0 bg-red-600 z-20 shadow-lg">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="md:flex md:items-center md:gap-12">
@@ -109,6 +85,7 @@ export const Header = () => {
                   <a
                     className="text-neutral-50 transition hover:text-red-100"
                     href={section.href}
+                    onClick={toggleMenu}
                   >
                     {section.name}
                   </a>
@@ -118,6 +95,6 @@ export const Header = () => {
           </nav>
         </div>
       </div>
-    </motion.header>
+    </header>
   );
 };

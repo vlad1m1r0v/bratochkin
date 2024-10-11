@@ -9,8 +9,8 @@ export default {
       addUtilities({
         ".mask-gradient": {
           "-webkit-mask":
-            "linear-gradient(90deg, #ffffff00 0%, #ffffff 5%, #ffffff 95%, #ffffff00 100%)",
-          mask: "linear-gradient(90deg, #ffffff00 0%, #ffffff 5%, #ffffff 95%, #ffffff00 100%)",
+            "linear-gradient(90deg, #ffffff00 0%, #ffffff 25%, #ffffff 75%, #ffffff00 100%)",
+          mask: "linear-gradient(90deg, #ffffff00 0%, #ffffff 25%, #ffffff 75%, #ffffff00 100%)",
         },
       });
     },
