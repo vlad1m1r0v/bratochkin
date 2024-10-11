@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import logo from "/logo.svg";
+import { motion } from "framer-motion";
 
 interface Section {
   name: string;
@@ -15,14 +16,56 @@ const sections: Section[] = [
 ];
 
 export const Header = () => {
+  const [isHidden, setHidden] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
+  const openHeader = () => {
+    setHidden(false);
+  };
+
+  const closeHeader = () => {
+    setHidden(true);
+  };
+
+  useEffect(() => {
+    const handleWheel = (event: WheelEvent) => {
+      closeMenu();
+
+      const delta = event.deltaY;
+
+      if (delta > 0) {
+        closeHeader();
+      } else {
+        openHeader();
+      }
+    };
+
+    window.addEventListener("wheel", handleWheel);
+
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+    };
+  }, []);
+
   return (
-    <header className="sticky top-0 bg-red-600 z-20 shadow-lg">
+    <motion.header
+      variants={{
+        visible: { y: 0 },
+        hidden: { y: "-100%" },
+      }}
+      initial="hidden"
+      animate={isHidden ? "hidden" : "visible"}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+      className="sticky top-0 bg-red-600 z-20 shadow-lg"
+    >
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="md:flex md:items-center md:gap-12">
@@ -40,6 +83,7 @@ export const Header = () => {
                     <a
                       className="text-neutral-50 transition hover:text-red-100"
                       href={section.href}
+                      onClick={closeHeader}
                     >
                       {section.name}
                     </a>
@@ -85,7 +129,10 @@ export const Header = () => {
                   <a
                     className="text-neutral-50 transition hover:text-red-100"
                     href={section.href}
-                    onClick={toggleMenu}
+                    onClick={() => {
+                      closeMenu();
+                      closeHeader();
+                    }}
                   >
                     {section.name}
                   </a>
@@ -95,6 +142,6 @@ export const Header = () => {
           </nav>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 };
