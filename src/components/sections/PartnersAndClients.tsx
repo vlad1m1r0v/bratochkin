@@ -15,6 +15,15 @@ import Walbi from "/partners/Walbi.svg";
 import ChoiceAI from "/partners/ChoiceAI.svg";
 import Pete from "/partners/Pete.png";
 import YNation from "/partners/YNation.png";
+import Tokeniza from "/partners/Tokeniza.svg";
+import Fuse from "/partners/Fuse.svg";
+import Denet from "/partners/Denet.svg";
+import OneInch from "/partners/1Inch.svg";
+import SynesisOne from "/partners/SynesisOne.svg";
+import BoundlessPay from "/partners/BoundlessPay.svg";
+import NebulaFinance from "/partners/NebulaFinance.png";
+import Soulbound from "/partners/Soulbound.webp";
+
 import { motion } from "framer-motion";
 import Ticker from "framer-motion-ticker";
 
@@ -112,6 +121,46 @@ const clients: PartnerOrClient[] = [
     name: "YNation Bot",
     href: "https://t.me/y_nation_bot",
     logo: YNation,
+  },
+  {
+    name: "Tokeniza",
+    href: "https://tokeniza.com.br/",
+    logo: Tokeniza,
+  },
+  {
+    name: "Fuse",
+    href: "https://www.fuse.io/",
+    logo: Fuse,
+  },
+  {
+    name: "DeNet",
+    href: "https://denet.pro/",
+    logo: Denet,
+  },
+  {
+    name: "1Inch",
+    href: "https://1inch.io/",
+    logo: OneInch,
+  },
+  {
+    name: "Synesis One",
+    href: "https://www.synesis.one/",
+    logo: SynesisOne,
+  },
+  {
+    name: "Boundless Pay",
+    href: "https://www.boundlesspay.com/",
+    logo: BoundlessPay,
+  },
+  {
+    name: "Nebula Finance",
+    href: "https://nebulafi.xyz/",
+    logo: NebulaFinance,
+  },
+  {
+    name: "Soulbound Beta",
+    href: "https://soulbound.gg/",
+    logo: Soulbound,
   },
 ];
 

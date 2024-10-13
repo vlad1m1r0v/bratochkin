@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import logo from "/logo.svg";
+import { useEffect, useState } from "react";
+import logo from "/lucid-logo.svg";
 import { motion } from "framer-motion";
 
 interface Section {
@@ -48,10 +48,41 @@ export const Header = () => {
       }
     };
 
+    let touchStartY = 0;
+
+    const handleTouchStart = (event: TouchEvent) => {
+      touchStartY = event.touches[0].clientY;
+    };
+
+    const handleTouchMove = (event: TouchEvent) => {
+      const touchCurrentY = event.touches[0].clientY;
+      const delta = touchStartY - touchCurrentY;
+
+      closeMenu();
+
+      if (delta > 0) {
+        closeHeader();
+      } else {
+        openHeader();
+      }
+
+      touchStartY = touchCurrentY;
+    };
+
+    const handleScrollEnd = () => {
+      closeMenu();
+    };
+
     window.addEventListener("wheel", handleWheel);
+    window.addEventListener("touchstart", handleTouchStart);
+    window.addEventListener("touchmove", handleTouchMove);
+    window.addEventListener("scrollend", handleScrollEnd);
 
     return () => {
       window.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchmove", handleTouchMove);
+      window.removeEventListener("scrollend", handleScrollEnd);
     };
   }, []);
 
@@ -129,10 +160,7 @@ export const Header = () => {
                   <a
                     className="text-neutral-50 transition hover:text-red-100"
                     href={section.href}
-                    onClick={() => {
-                      closeMenu();
-                      closeHeader();
-                    }}
+                    onClick={closeHeader}
                   >
                     {section.name}
                   </a>
