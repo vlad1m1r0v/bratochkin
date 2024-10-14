@@ -112,7 +112,6 @@ export const Services = () => (
               variants={animation}
               initial="hidden"
               whileInView="show"
-              // custom={index}
               style={{ originX: index % 2 == 0 ? 0 : 1 }}
               viewport={{ once: true }}
             >
