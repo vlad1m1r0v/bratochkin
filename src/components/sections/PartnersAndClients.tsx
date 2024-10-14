@@ -26,6 +26,7 @@ import Soulbound from "/partners/Soulbound.webp";
 
 import { motion } from "framer-motion";
 import Ticker from "framer-motion-ticker";
+import { useCallback, useEffect, useState } from "react";
 
 interface PartnerOrClient {
   name: string;
@@ -164,19 +165,9 @@ const clients: PartnerOrClient[] = [
   },
 ];
 
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
 const item = {
   hidden: { opacity: 0, y: -10, x: -10, scale: 0.5 },
-  show: {
+  show: ({ index, items }: { index: number; items: number }) => ({
     opacity: 1,
     y: 0,
     x: 0,
@@ -184,8 +175,9 @@ const item = {
     transition: {
       type: "spring",
       duration: 0.15,
+      delay: (index % items) * 0.15,
     },
-  },
+  }),
 };
 
 const Card: React.FC<PartnerOrClient> = ({ name, href, logo }) => {
@@ -227,22 +219,43 @@ export const Partners = () => {
 };
 
 export const Clients = () => {
+  const [itemsInRow, setItemsInRow] = useState(0);
+
+  const handleResize = useCallback(() => {
+    const width = window.innerWidth;
+
+    if (width < 768) return setItemsInRow(2);
+    if (width < 1024) return setItemsInRow(3);
+    return setItemsInRow(4);
+  }, []);
+
+  useEffect(() => {
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [handleResize]);
+
   return (
     <section>
       <div className="mx-auto max-w-screen-xl px-4">
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="my-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4"
-        >
+        <div className="my-8 grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-4">
           {clients.map((client, index) => (
-            <motion.div key={index} variants={item}>
+            <motion.div
+              key={index}
+              variants={item}
+              initial="hidden"
+              whileInView="show"
+              custom={{ index, items: itemsInRow }}
+              viewport={{ once: true }}
+            >
               <Card name={client.name} logo={client.logo} href={client.href} />
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
