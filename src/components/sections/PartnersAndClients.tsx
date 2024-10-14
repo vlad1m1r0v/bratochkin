@@ -234,6 +234,7 @@ export const Clients = () => {
           variants={container}
           initial="hidden"
           whileInView="show"
+          viewport={{ once: true }}
           className="my-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4"
         >
           {clients.map((client, index) => (

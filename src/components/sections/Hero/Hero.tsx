@@ -24,12 +24,13 @@ export const Hero = () => {
         variants={imageAnimation}
         initial="hidden"
         whileInView="show"
+        viewport={{ once: true }}
         src="/background.png"
         alt="Background"
       />
       <div className="relative z-10 mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-full lg:items-center text-center">
-        <div className="mx-auto max-w-3xl">
-          <h1 className="text-4xl font-bold sm:text-7xl bg-red-500 text-neutral-50 px-1 py-3">
+        <div className="mx-auto max-w-3xl flex items-center justify-center h-[200px]">
+          <h1 className="text-2xl font-bold sm:text-5xl bg-red-500 text-neutral-50 px-1 py-2 w-full overflow-hidden">
             <AnimText delay={1} />
           </h1>
         </div>

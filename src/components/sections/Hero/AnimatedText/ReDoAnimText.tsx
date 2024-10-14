@@ -25,7 +25,7 @@ export default function RedoAnimText({ delay }: IRedoAnimTextProps) {
   const updatedThisRound = useMotionValue(true);
 
   useEffect(() => {
-    animate(count, 60, {
+    animate(count, 30, {
       type: "tween",
       delay: delay,
       duration: 1,

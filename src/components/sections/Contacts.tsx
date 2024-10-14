@@ -26,20 +26,24 @@ const socials: Social[] = [
 interface Location {
   country: string;
   address: string;
+  icon: React.ReactNode;
 }
 
 const locations: Location[] = [
   {
-    country: "🇺🇦 Ukraine",
+    country: "Ukraine",
     address: "Dilova Street, 1/2, Kyiv, 03150",
+    icon: <span className="fi fi-ua"></span>,
   },
   {
-    country: "🇵🇱 Poland",
+    country: "Poland",
     address: "Warsaw, Grzybowska St. 73/8a",
+    icon: <span className="fi fi-pl"></span>,
   },
   {
-    country: "🇪🇪 Estonia",
+    country: "Estonia",
     address: "Tallinn, Kesklinna linnaosa, Vesivärava tn 50-201",
+    icon: <span className="fi fi-ee"></span>,
   },
 ];
 
@@ -73,11 +77,14 @@ export const Contacts = () => {
           variants={container}
           initial="hidden"
           whileInView="show"
+          viewport={{ once: true }}
           className="flex flex-col gap-3"
         >
           {locations.map((location, index) => (
             <motion.div key={index} variants={item}>
-              <p className="text-xl font-bold">{location.country}</p>
+              <p className="text-xl font-bold">
+                {location.icon} {location.country}
+              </p>
               <p className="text-lg font-light">{location.address}</p>
             </motion.div>
           ))}
@@ -86,10 +93,16 @@ export const Contacts = () => {
           variants={container}
           initial="hidden"
           whileInView="show"
+          viewport={{ once: true }}
           className="flex items-end justify-center flex-row md:flex-col gap-3"
         >
           {socials.map((social, index) => (
-            <motion.a key={index} variants={item} href={social.href}>
+            <motion.a
+              key={index}
+              variants={item}
+              href={social.href}
+              target="_blank"
+            >
               <img className="w-10 lg:w-12 rounded-md" src={social.logo} />
             </motion.a>
           ))}

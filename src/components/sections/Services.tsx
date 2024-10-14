@@ -115,6 +115,7 @@ export const Services = () => (
               whileInView="show"
               custom={index}
               style={{ originX: index % 2 == 0 ? 0 : 1 }}
+              viewport={{ once: true }}
             >
               <Service
                 title={service.title}
