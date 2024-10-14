@@ -60,15 +60,14 @@ const animation = {
     opacity: 0,
     scale: 0.0,
   },
-  show: (index: number) => ({
+  show: {
     opacity: 1,
     scale: 1,
     transition: {
       type: "spring",
       duration: 0.75,
-      delay: 0.15 * index,
     },
-  }),
+  },
 };
 
 const Service: React.FC<ServiceProp & { index: number }> = ({
@@ -106,14 +105,14 @@ export const Services = () => (
   <>
     <section className="overflow-x-hidden">
       <div className="mx-auto max-w-screen-xl px-4">
-        <motion.div whileInView="show" className="my-8 grid grid-cols-1 gap-8">
+        <div className="my-8 grid grid-cols-1 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={index}
               variants={animation}
               initial="hidden"
               whileInView="show"
-              custom={index}
+              // custom={index}
               style={{ originX: index % 2 == 0 ? 0 : 1 }}
               viewport={{ once: true }}
             >
@@ -125,7 +124,7 @@ export const Services = () => (
               />
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   </>
