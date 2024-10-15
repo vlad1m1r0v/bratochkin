@@ -1,7 +1,7 @@
 import { Header } from "@/components/Header";
-import { Announcement } from "@/components/Announcement";
 import {
   Hero,
+  Stats,
   Clients,
   Partners,
   Services,
@@ -15,9 +15,12 @@ const App = () => {
     <>
       <div className="bg-gray-50 selection:text-gray-50 selection:bg-red-500">
         <Header />
-        <Announcement />
         <div id="about-us">
           <Hero />
+        </div>
+        <div id="stats">
+          <Divider>Stats</Divider>
+          <Stats />
         </div>
         <div id="clients">
           <Divider>Clients</Divider>

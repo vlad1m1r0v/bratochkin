@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import logo from "/lucid-logo.svg";
 import { motion } from "framer-motion";
+import { Announcement } from "./Announcement";
 
 interface Section {
   name: string;
@@ -9,6 +10,7 @@ interface Section {
 
 const sections: Section[] = [
   { name: "About Us", href: "#about-us" },
+  { name: "Stats", href: "#stats" },
   { name: "Clients", href: "#clients" },
   { name: "Partners", href: "#partners" },
   { name: "Services", href: "#services" },
@@ -170,6 +172,7 @@ export const Header = () => {
           </nav>
         </div>
       </div>
+      <Announcement />
     </motion.header>
   );
 };
