@@ -1,54 +1,44 @@
-import { useEffect, useRef } from "react";
-import { useInView, useMotionValue, useSpring } from "framer-motion";
-
-/**
- *
- * @param root0
- * @param root0.value
- */
+import { useEffect, useRef, useState } from "react";
+import { useInView } from "framer-motion";
 
 type Props = {
   value: number;
-  direction?: "up" | "down";
+  duration?: number; // тривалість анімації в мілісекундах
   className?: string;
 };
 
-export default function Counter({ value, direction = "up", className }: Props) {
+export default function Counter({ value, duration = 2000, className }: Props) {
   const ref = useRef<HTMLSpanElement>(null);
-  const motionValue = useMotionValue(direction === "down" ? value : 0);
-  const springValue = useSpring(motionValue, {
-    damping: 100,
-    stiffness: 100,
-  });
+  const [displayValue, setDisplayValue] = useState(0);
   const isInView = useInView(ref, { once: true });
 
   const formatNumber = (num: number) => {
-    if (num < 1000) {
-      return num.toString();
-    }
-
-    if (num >= 1000 && num < 1_000_000) {
+    if (num < 1000) return num.toString();
+    if (num < 1_000_000)
       return `${(num / 1000).toFixed(1).replace(/\.0$/, "")}k`;
-    }
-
     return `${(num / 1_000_000).toFixed(1).replace(/\.0$/, "")}m`;
   };
 
   useEffect(() => {
     if (isInView) {
-      motionValue.set(direction === "down" ? 0 : value);
-    }
-  }, [motionValue, isInView]);
+      const startTime = performance.now();
 
-  useEffect(
-    () =>
-      springValue.on("change", (latest) => {
-        if (ref.current) {
-          ref.current.textContent = formatNumber(Number(latest.toFixed(0)));
+      const animate = (time: number) => {
+        const progress = Math.min((time - startTime) / duration, 1);
+        setDisplayValue(Math.round(progress * value));
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
         }
-      }),
-    [springValue]
-  );
+      };
 
-  return <span className={className} ref={ref} />;
+      requestAnimationFrame(animate);
+    }
+  }, [isInView, value, duration]);
+
+  return (
+    <span className={className} ref={ref}>
+      {formatNumber(displayValue)}
+    </span>
+  );
 }

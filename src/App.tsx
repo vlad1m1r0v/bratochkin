@@ -5,6 +5,7 @@ import {
   Clients,
   Partners,
   Services,
+  Events,
   Contacts,
 } from "@/components/sections";
 import { Divider } from "@/components/Divider";
@@ -33,6 +34,10 @@ const App = () => {
         <div id="services">
           <Divider>Services</Divider>
           <Services />
+        </div>
+        <div id="events">
+          <Divider>Events</Divider>
+          <Events />
         </div>
         <div id="contacts">
           <Divider>Contacts</Divider>

@@ -49,3 +49,7 @@
     font-family: "e-Ukraine", system-ui, sans-serif;
   }
 }
+
+:root {
+  --swiper-pagination-color: theme("colors.red.600");
+}

@@ -72,7 +72,7 @@ const item = {
 export const Contacts = () => {
   return (
     <section>
-      <div className="mx-auto max-w-screen-xl grid grid-cols-1 md:grid-cols-2 px-4 sm:px-6 lg:px-8 pb-6 gap-3">
+      <div className="mx-auto max-w-screen-xl grid grid-cols-1 md:grid-cols-2 px-4 pb-6 gap-3">
         <motion.div
           variants={container}
           initial="hidden"

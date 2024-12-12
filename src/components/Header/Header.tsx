@@ -14,6 +14,7 @@ const sections: Section[] = [
   { name: "Clients", href: "#clients" },
   { name: "Partners", href: "#partners" },
   { name: "Services", href: "#services" },
+  { name: "Events", href: "#events" },
   { name: "Contacts", href: "#contacts" },
 ];
 

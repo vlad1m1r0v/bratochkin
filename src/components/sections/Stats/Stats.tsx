@@ -26,7 +26,11 @@ const blocks: StatsBlockProps[] = [
   },
   {
     number: 21,
-    text: "Celebrity work with us",
+    text: "Celebrities work with us",
+  },
+  {
+    number: 86,
+    text: "Successfull companies",
   },
 ];
 

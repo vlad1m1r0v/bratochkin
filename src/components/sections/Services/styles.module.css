@@ -1,0 +1,24 @@
+/* .expertise-image {
+  filter: drop-shadow(0 2rem 0.75rem rgb(199, 199, 199));
+} */
+
+@keyframes float-drop-shadow {
+  0% {
+    transform: translateY(0px);
+    filter: drop-shadow(0 2rem 0.75rem rgb(183, 183, 183));
+  }
+  50% {
+    transform: translateY(-20px);
+    filter: drop-shadow(0 4rem 1rem rgba(183, 183, 183, 0.5));
+  }
+  100% {
+    transform: translateY(0px);
+    filter: drop-shadow(0 2rem 0.75rem rgb(183, 183, 183));
+  }
+}
+
+.expertise-image {
+  transform: translateY(0px);
+  filter: drop-shadow(0 2rem 0.75rem rgb(183, 183, 183));
+  animation: float-drop-shadow 6s ease-in-out infinite;
+}
