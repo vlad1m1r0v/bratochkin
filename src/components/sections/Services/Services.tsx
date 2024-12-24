@@ -93,10 +93,10 @@ const Service: React.FC<ServiceProp & { index: number }> = ({
         "lg:pr-8": index % 2 != 0,
       })}
     >
-      <div className="bg-gradient-to-r from-red-500 to-yellow-500 bg-clip-text text-transparent">
+      <div className="text-red-600">
         <p className="text-4xl font-bold mb-4">{title}</p>
       </div>
-      <p className="text-lg font-light">{text}</p>
+      <p className="text-slate-800 text-lg font-light">{text}</p>
     </div>
   </div>
 );

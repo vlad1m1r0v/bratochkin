@@ -23,6 +23,9 @@ import SynesisOne from "/partners/SynesisOne.svg";
 import BoundlessPay from "/partners/BoundlessPay.svg";
 import NebulaFinance from "/partners/NebulaFinance.png";
 import Soulbound from "/partners/Soulbound.webp";
+import WeldMoney from "/partners/WeldMoney.png";
+import PuffPaw from "/partners/PuffPaw.png";
+import AddUp from "/partners/AddUp.png";
 
 import { motion } from "framer-motion";
 import Ticker from "framer-motion-ticker";
@@ -162,6 +165,21 @@ const clients: PartnerOrClient[] = [
     name: "Soulbound Beta",
     href: "https://soulbound.gg/",
     logo: Soulbound,
+  },
+  {
+    name: "Weld Money",
+    href: "https://weld.money/",
+    logo: WeldMoney,
+  },
+  {
+    name: "Puff Paw",
+    href: "https://www.puffpaw.xyz/",
+    logo: PuffPaw,
+  },
+  {
+    name: "Add Up",
+    href: "https://t.me/addup_test_bot",
+    logo: AddUp,
   },
 ];
 

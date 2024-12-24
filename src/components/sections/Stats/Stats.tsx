@@ -29,7 +29,7 @@ const blocks: StatsBlockProps[] = [
     text: "Celebrities work with us",
   },
   {
-    number: 86,
+    number: 137,
     text: "Successfull companies",
   },
 ];
@@ -52,10 +52,10 @@ const item = {
 const Block = ({ number, text }: StatsBlockProps) => {
   return (
     <>
-      <div className="bg-gradient-to-r from-red-500 to-yellow-500 bg-clip-text text-transparent text-4xl font-bold">
+      <div className="text-red-600 text-4xl font-bold">
         <Counter value={number} />
       </div>
-      <p className="lg:text-lg font-light">{text}</p>
+      <p className="text-slate-800 lg:text-lg font-light">{text}</p>
     </>
   );
 };
