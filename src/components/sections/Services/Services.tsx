@@ -23,14 +23,9 @@ const services: ServiceProp[] = [
   },
   {
     title: "Influencer Marketing for iGaming Products",
-    text: "iGaming projects rely on us for our unparalleled expertise. We\
-      specialize in boosting brand recognition through innovative strategies\
-      that resonate with the target audience. Our tailored campaigns are\
-      designed not only to capture attention but also to drive measurable\
-      results, ensuring your marketing investments are both impactful and\
-      profitable. Whether you’re launching a new platform or scaling an\
-      existing brand, we deliver solutions that maximize your growth\
-      potential and set you apart in a competitive industry.",
+    text: "iGaming projects turn to us for our expertise—we help with brand\
+      recognition and make campaigns profitable. Get a proposal for your iGaming\
+      product—it's free! 🙂",
     image: IGaming,
   },
   {

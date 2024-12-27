@@ -1,7 +1,3 @@
-/* .expertise-image {
-  filter: drop-shadow(0 2rem 0.75rem rgb(199, 199, 199));
-} */
-
 @keyframes float-drop-shadow {
   0% {
     transform: translateY(0px);

@@ -19,30 +19,20 @@ interface BratochkinSocial {
 
 const socials: Social[] = [
   {
-    logo: Instagram,
-    href: "https://www.instagram.com/simplemaker/",
+    logo: LinkedIn,
+    href: "https://www.linkedin.com/in/oleg-br%C3%A1tochkin-229188185/",
   },
   {
     logo: Telegram,
     href: "https://t.me/simplemaker",
   },
   {
-    logo: LinkedIn,
-    href: "https://www.linkedin.com/in/oleg-br%C3%A1tochkin-229188185/",
+    logo: Instagram,
+    href: "https://www.instagram.com/simplemaker/",
   },
 ];
 
 const bratochkinSocials: BratochkinSocial[] = [
-  {
-    logo: Instagram,
-    href: "https://www.instagram.com/simplemaker/",
-    text: "Ask on Instagram",
-  },
-  {
-    logo: Telegram,
-    href: "https://t.me/simplemaker",
-    text: "Ask on Telegram",
-  },
   {
     logo: LinkedIn,
     href: "https://www.linkedin.com/in/oleg-br%C3%A1tochkin-229188185/",
@@ -52,6 +42,16 @@ const bratochkinSocials: BratochkinSocial[] = [
     logo: GMail,
     href: "mailto:lucidmediabook@gmail.com",
     text: "Ask on GMail",
+  },
+  {
+    logo: Telegram,
+    href: "https://t.me/simplemaker",
+    text: "Ask on Telegram",
+  },
+  {
+    logo: Instagram,
+    href: "https://www.instagram.com/simplemaker/",
+    text: "Ask on Instagram",
   },
 ];
 
@@ -150,7 +150,7 @@ export const Contacts = () => {
                 <a
                   href={social.href}
                   key={social.href}
-                  className="flex items-center justify-center w-[315px] m-auto bg-white p-2 mt-3 rounded-full border border-gray-300 transition hover:border-red-500"
+                  className="flex items-center justify-center w-full md:w-[315px] m-auto bg-white p-2 mt-3 rounded-full border border-gray-300 transition hover:border-red-500"
                 >
                   <img className="h-[24px] w-[24px]" src={social.logo} alt="" />
                   <p className="ml-2">{social.text}</p>
